@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>dprop</Title>
+			<Shortcut>dprop</Shortcut>
+			<Description>Code snippet for an automatically implemented property that also maps Column and Display DB props.</Description>
+			<Author>geekcyclist</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+                    <ID>columnName</ID>
+					<ToolTip>Column name</ToolTip>
+					<Default>name</Default>
+                </Literal>
+                <Literal>
+                    <ID>displayName</ID>
+					<ToolTip>Display name</ToolTip>
+					<Default>name</Default>
+                </Literal>
+                <Literal>
+					<ID>type</ID>
+					<ToolTip>Property type</ToolTip>
+					<Default>string</Default>
+				</Literal>
+				<Literal>
+					<ID>property</ID>
+					<ToolTip>Property name</ToolTip>
+					<Default>MyProperty</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="csharp"><![CDATA[[Column("$columnName$")]
+            [Display(Name = "$displayName$")]
+            public $type$ $property$ { get; set; }$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>
